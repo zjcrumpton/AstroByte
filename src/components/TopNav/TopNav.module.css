@@ -1,0 +1,23 @@
+.container {
+  align-items: center;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.items-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+.link[data-active="true"] {
+  color: var(--active-color);
+}

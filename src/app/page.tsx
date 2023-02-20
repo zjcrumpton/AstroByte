@@ -1,9 +1,10 @@
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "./page.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { TopNav } from "@/components/TopNav";
+import { Route, routes } from "./routes";
 
 export default function Home() {
-  return <main className={styles.main}>AstroByte</main>;
+  return (
+    <main>
+      <TopNav links={routes} activeRoute={Route.HOME} />
+    </main>
+  );
 }

@@ -1,4 +1,7 @@
 :root,
 html {
-  background-color: #051323;
+  --active-color: #10eba6;
+  --bg-color: #051323;
+
+  background-color: var(--bg-color);
 }

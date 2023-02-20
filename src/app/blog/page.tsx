@@ -1,11 +1,14 @@
+import { TopNav } from "@/components/TopNav";
 import { getAllPosts } from "@ghost";
 import Link from "next/link";
+import { Route, routes } from "../routes";
 
 const Blog = async () => {
   const posts = await getAllPosts();
 
   return (
     <div>
+      <TopNav links={routes} activeRoute={Route.BLOG} />
       <h1>Welcome to the blog</h1>
       <h2>Posts</h2>
       <ul>

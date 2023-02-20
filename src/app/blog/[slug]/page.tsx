@@ -1,3 +1,5 @@
+import { Route, routes } from "@/app/routes";
+import { TopNav } from "@/components/TopNav";
 import { getPostBySlug } from "@ghost";
 import Link from "next/link";
 
@@ -12,18 +14,21 @@ const BlogPost = async (props: BlogPostProps) => {
   const html = data.html ?? "";
 
   return (
-    <article>
-      <h1>{data.title}</h1>
-      <div>
-        {data.tags?.map((tag) => (
-          <Link key={tag.id} href={`/tags/${tag.slug}`}>
-            #{tag.name}
-          </Link>
-        ))}
-      </div>
-      <hr />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    </article>
+    <>
+      <TopNav links={routes} activeRoute={Route.BLOG} />
+      <article>
+        <h1>{data.title}</h1>
+        <div>
+          {data.tags?.map((tag) => (
+            <Link key={tag.id} href={`/tags/${tag.slug}`}>
+              #{tag.name}
+            </Link>
+          ))}
+        </div>
+        <hr />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </article>
+    </>
   );
 };
 
